@@ -155,7 +155,7 @@ vim /opt/focalboard/config.json
 }
 
 ```
-Dòng dbtype và dbconfig đổi thành Postgres vừa mới tại trên 
+Dòng dbtype và dbconfig đổi thành Postgres vừa mới tạo trên 
 
 ![alt text](image-133.png)
 
