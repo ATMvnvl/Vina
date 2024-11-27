@@ -8,15 +8,17 @@ dịch vụ bên vinahost.vn để đăng nhập như hình
  
  + Chưa có tài khoản nhấn tạo tài khoản mới 
  
- ![alt text](image-3.png)
-
+ ![alt text](image-128.png)
+ 
+ 
 ### Bước 2: Tiến hành quản lý các dịch vụ của tôi 
 Bảng tổng quan ---> chọn VPS cần khởi động và nhấn quản lý như trong hình 
  
+ ![alt text](image-129.png)
  
- Sau khi nhấn `Quản lý` ta vào được chi tiết loại dịch vụ đó 
+ Sau khi nhấn `Quản` lý` ta vào được chi tiết loại dịch vụ đó 
 
-![alt text](image-4.png)
+![alt text](image-130.png)
 
 #### Cách 1: 
 Trong phần Thao tác ta có các lựa chọn sau: 
@@ -37,10 +39,10 @@ Trong đó có các thao tác như:
  + Restart the VPS 
  + Connect VNC
 
-![alt text](image-5.png)
+![alt text](image-131.png)
 
 ### Bước 3: Kiểm tra kết nối
 
-![alt text](image-6.png)
+![alt text](image-132.png)
 
 <p style="text-align: center;"><span style="color: orange;">Chúc Quý khách thành công</span></p>
