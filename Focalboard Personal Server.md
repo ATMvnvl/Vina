@@ -105,7 +105,98 @@ Xóa file mặc định của của nginx để thêm focalboard
 ```
 sudo rm /etc/nginx/sites-enabled/default
 ```
+Tạo một liên kết tượng trưng từ tệp cấu hình của focalboard trong sites-available sang sites-enabled
+```
+ln -s /etc/nginx/sites-available/focalboard /etc/nginx/sites-enabled/focalboard
+```
 
+Kiểm tra cấu hình và tải lại cấu hình Nginx
+```
+nginx -t
+/etc/init.d/nginx reload
+```
 
+### 3. Cài đặt Postgresql 
+```
+apt install postgresql postgresql-contrib -y 
+```
 
-![alt text](image-125.png)
+Tạo cơ sở dữ liệu mới
+```
+sudo --login --user postgres
+psql 
+CREATE DATABASE boards;
+CREATE USER secroot WITH PASSWORD 'tpq2025';
+\q
+```
+Cài đặt dbconfig để sử dụng cơ sở dữ liệu Postgres vừa mới tạo 
+
+```
+vim /opt/focalboard/config.json
+```
+
+```
+{
+        "serverRoot": "https://210.211.122.215:8000",
+        "port": 8000,
+        "dbtype": "postgres",
+        "dbconfig": "postgres://secroot:tpq2025@localhost:5432/focalboard?sslmode=disable&connect_timeout=10",
+        "postgres_dbconfig": "dbname=focalboard sslmode=disable",
+        "useSSL": false,
+        "webpath": "./pack",
+        "filespath": "./files",
+    "telemetry": true,
+    "prometheus_address": ":9092",
+    "session_expire_time": 2592000,
+    "session_refresh_time": 18000,
+    "localOnly": false,
+    "enableLocalMode": true,
+    "localModeSocketLocation": "/var/tmp/focalboard_local.socket"
+}
+
+```
+Dòng dbtype và dbconfig đổi thành Postgres vừa mới tại trên 
+
+![alt text](image-133.png)
+
+Cấu hình Focalboard để chạy dịch vụ 
+
+```
+vim /lib/systemd/system/focalboard.service
+
+[Unit]
+Description=Focalboard server
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5s
+ExecStart=/opt/focalboard/bin/focalboard-server
+WorkingDirectory=/opt/focalboard
+
+[Install]
+WantedBy=multi-user.target
+
+```
+Khởi động dịch vụ 
+```
+sudo systemctl daemon-reload
+sudo systemctl start focalboard.service
+sudo systemctl enable focalboard.service
+````
+
+Khởi động lại các dịch vụ Nginx và Postgres
+
+![alt text](image-134.png)
+
+### 4. Đăng nhập 
++ Đăng nhập với IP hoặc tên miền đã khai báo: http://210.211.122.125 hoặc http://server.thapphuquy.online
+
+Đăng ký tài khoản lần đầu 
++ Tên đăng nhập:mật khẩu: `quytp:Viettel070720@`
+
+![alt text](image-137.png)
+
+Bảng tổng quan Focalborad 
+
+![alt text](image-138.png)
