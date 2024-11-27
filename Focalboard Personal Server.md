@@ -200,3 +200,15 @@ Khởi động lại các dịch vụ Nginx và Postgres
 Bảng tổng quan Focalborad 
 
 ![alt text](image-138.png)
+
+#### 4.1 Thêm các bảng vào dự án
+
+Ở đây tôi muốn thêm bảng `Roadmap`  --> nhấn `Use this template` để sử dụng 
+ 
+![alt text](image-139.png)
+
+Kết quả 
+
+![alt text](image-140.png)
+
+Cấu hình lại để phù hợp
