@@ -197,6 +197,4 @@ apt-get update && apt-get upgrade
 ```
 Sau khi thực hiện update các gói dịch vụ và kernel quý khách thực hiện reboot lại Server/VPS lần cuối để các update có hiệu lực.
 
-Để đảm bảo an toàn quý khách nên thiết lập các cài đặt bảo mật trên ngay khi khởi tạo Server/VPS. Quý khách hàng vui lòng liên hệ với phòng kỹ thuật qua giao diện hỗ trợ trực tuyến tại https://vinahost.vn hoặc kênh chat https://livechat.vinahost.vn/ nếu có yêu cầu cần trợ giúp 
-
-Email: support@vinahost.vn
+Để đảm bảo an toàn quý khách nên thiết lập các cài đặt bảo mật trên ngay khi khởi tạo Server/VPS. Quý khách hàng vui lòng liên hệ với phòng kỹ thuật qua giao diện hỗ trợ trực tuyến tại https://vinahost.vn hoặc kênh chat https://livechat.vinahost.vn/ nếu có yêu cầu cần trợ giúp. Email: support@vinahost.vn
