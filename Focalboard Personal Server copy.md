@@ -189,11 +189,29 @@ Khởi động lại các dịch vụ Nginx và Postgres
 
 ![alt text](image-134.png)
 
-### 4. Đăng nhập 
-+ Đăng nhập với IP hoặc tên miền đã khai báo: http://210.211.122.125 hoặc http://server.thapphuquy.online
+### 4. Cấu hình cài đặt chứng chỉ SSL
+#### 4.1 Cài đặt Certbot:
+```
+sudo apt update -y 
+sudo apt install certbot python3-certbot-nginx -y 
+```
+
+#### 4.2 Tạo chứng chỉ SSL cho tên miền hoặc địa chỉ IP
+
+```
+sudo certbot certonly --nginx -d server.thapphuquy.online // SSL lưu tại `/etc/letsencrypt/live/server.thapphuquy.online/`
+
+```
+
+#### 4.3 Cấu hình Nginx để chuyển sang HTTPS
+Mở đến file `/etc/nginx/sites-available/focalboard`
+
+
+### 5. Đăng nhập 
++ Đăng nhập với IP hoặc tên miền đã khai báo: https://server.thapphuquy.online
 
 Đăng ký tài khoản lần đầu 
-+ Tên đăng nhập:mật khẩu: `quytp:Viettel070720@`
++ Tên đăng nhập:mật khẩu: `quytp:VinaHost2008`
 
 ![alt text](image-137.png)
 
@@ -201,7 +219,19 @@ Bảng tổng quan Focalborad
 
 ![alt text](image-138.png)
 
-#### 4.1 Thêm các bảng vào dự án
+#### 5.1 Thêm các user khác
+Nhấn vào biểu tượng Focalboard --> Invite users --> Copy link
+
+![alt text](image-171.png)
+
+Kết quả
+
+Vào link đã copy [Register](http://server.thapphuquy.online/register?t=kpkrjzh89x3da7ndhinxx8kd3ur) --> Điền thông tin --> Đã tạo thành công với user `tpq`
+
+![alt text](image-172.png)
+
+
+#### 5.2 Thêm các bảng vào dự án
 
 Ở đây tôi muốn thêm bảng `Roadmap`  --> nhấn `Use this template` để sử dụng 
  
@@ -211,53 +241,61 @@ Kết quả
 
 ![alt text](image-140.png)
 
-### 5. Cấu hình lại 
-#### 5.1 Tạo mẫu mới
+### 6. Cấu hình lại 
+#### 6.1 Content Calendar 
+Nhấn vào Content Calendar  --> New 
 
-![alt text](image-159.png)
-
-Kết quả
-
-![alt text](image-160.png)
-
-#### 5.2 Chương trình họp 
-
-![alt text](image-162.png)
-
-Kết quả
-
-![alt text](image-161.png)
-
-#### 5.3 Lộ trình 
-
-![alt text](image-163.png)
+![alt text](image-178.png)
 
 Kết quả:
 
-![alt text](image-164.png)
+![alt text](image-179.png)
 
-#### 5.4 Mục tiêu
+#### 6.2 Meeting Agenda 
+Nhấn vào Meeting Agenda --> New
 
-![alt text](image-165.png)
-
-Kết quả: 
-
-![alt text](image-166.png)
-
-#### 5.5 Nhiệm Vụ Cá Nhân
-
-![alt text](image-167.png)
-
-Kết quả
-
-![alt text](image-168.png)
-
-#### 5.6 Nhiệm Vụ Dự Án
-
-![alt text](image-169.png)
+![alt text](image-180.png)
 
 Kết quả:
 
-![alt text](image-170.png)
+![alt text](image-181.png)
 
+#### 6.3 Personal Goals 
+Nhấn Personal Goals --> New 
 
+![alt text](image-182.png)
+
+Kết quả:
+
+![alt text](image-183.png)
+
+#### 6.4 Personal Tasks 
+Nhấn Personal Tasks --> New
+
+![alt text](image-184.png)
+
+Kết quả:
+
+![alt text](image-185.png)
+
+#### 6.5 Project Tasks 
+Nhấn Project Tasks  --> New
+
+![alt text](image-186.png)
+
+Kết quả:
+
+![alt text](image-187.png)
+
+#### 6.6 Roadmap 
+Vào Roadmap --> New
+
+![alt text](image-188.png)
+
+Kết quả:
+
+![alt text](image-189.png)
+
+### 7. Welcome to Boards!
+
+![alt text](image-190.png)
