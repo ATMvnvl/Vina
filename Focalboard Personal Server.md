@@ -199,12 +199,31 @@ sudo apt install certbot python3-certbot-nginx -y
 #### 4.2 Tạo chứng chỉ SSL cho tên miền hoặc địa chỉ IP
 
 ```
-sudo certbot certonly --nginx -d server.thapphuquy.online // SSL lưu tại `/etc/letsencrypt/live/server.thapphuquy.online/`
-
+sudo certbot certonly --nginx -d server.thapphuquy.online // SSL lưu tại `/etc/letsencrypt/live/server.thapphuquy.online/`  
 ```
 
+
 #### 4.3 Cấu hình Nginx để chuyển sang HTTPS
-Mở đến file `/etc/nginx/sites-available/focalboard`
+Mở đến file `/etc/nginx/sites-available/focalboard` thêm như ở để chuyến hướng https và thêm chứng chỉ ssl
+
+```
+   return 301 https://$host$request_uri;
+}
+
+server {
+   listen 443 ssl;
+   server_name server.thapphuquy.online;
+   ssl_certificate /etc/letsencrypt/live/server.thapphuquy.online/fullchain.pem;
+   ssl_certificate_key /etc/letsencrypt/live/server.thapphuquy.online/privkey.pem;
+
+   ssl_protocols TLSv1.2 TLSv1.3;
+   ssl_prefer_server_ciphers on;
+   ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+   ssl_session_cache shared:SSL:10m;
+   ssl_session_timeout 10m;
+```
+
+![alt text](image-191.png)
 
 
 ### 5. Đăng nhập 
@@ -241,7 +260,7 @@ Kết quả
 
 ![alt text](image-140.png)
 
-### 6. Cấu hình lại 
+### 6. Cấu hình thêm
 #### 6.1 Content Calendar 
 Nhấn vào Content Calendar  --> New 
 
